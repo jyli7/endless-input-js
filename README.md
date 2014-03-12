@@ -2,7 +2,7 @@
 
 This is Javascript module that provides a slick, "endless" way of collecting user input.
 
-You can see it in action [here](http://www.jylcreations.com/endless-input)
+See it in action [here](http://www.jylcreations.com/endless-input).
 
 ## How to use this
 
