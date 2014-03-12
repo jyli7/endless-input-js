@@ -7,17 +7,17 @@ You can see it in action [here](http://www.jylcreations.com/endless-input)
 ## How to use this
 
 1. Include these three js files in your HTML file's head:
-'''
+```javascript
 	<script src="js/underscore.min.js"></script>
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="js/endless-input.js"></script>
-'''
+```
 
 2. Within a <form></form> element, you can turn any <input type="text"> elements into
 endless text inputs by setting the data-endless value. If you give inputs A, B, C the same
 input value (e.g. "1", as below), they'll be clustered into the same "endless" input stream.
 
-'''
+```
 	<form class="my-form" action="/vote" method="post">
 		<input type="text" name="my-data" data-endless="1" class="example-input"></input>
 		<input type="text" name="my-data" data-endless="1" class="example-input"></input>
@@ -26,7 +26,7 @@ input value (e.g. "1", as below), they'll be clustered into the same "endless" i
 		<input type="text" name="my-data" data-endless="1" class="example-input"></input>
 		<input type="submit" value="Submit">
 	</form>
-'''
+```
 
 ## License
 
