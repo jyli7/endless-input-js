@@ -175,8 +175,8 @@
 
 	EndlessInput.prototype.generateArrows = function () {
 		// Place the arrows into the BODY
-		$('body').append("<div class='endless-input-arrow-up'>");
-		$('body').append("<div class='endless-input-arrow-down'>");
+		$('body').append("<a class='endless-input-arrow-up'></a>");
+		$('body').append("<a class='endless-input-arrow-down'></a>");
 		this.$upArrow = $('.endless-input-arrow-up');
 		this.$downArrow = $('.endless-input-arrow-down');
 		this.$upArrow.css('position', 'absolute');
@@ -208,12 +208,10 @@
 			heightOfAllVisibles = bottomOfVisibles - topOfVisibles;
 			midpointOfAllVisibles = topOfVisibles + (heightOfAllVisibles / 2);
 
-			upArrowBottom = midpointOfAllVisibles -
-													this.distanceBetweenArrows / 2;
+			upArrowBottom = midpointOfAllVisibles - this.distanceBetweenArrows / 2;
 			this.$upArrow.css('top', upArrowBottom - this.$upArrow.height());
 
-			downArrowTop = midpointOfAllVisibles +
-												 this.distanceBetweenArrows / 2;
+			downArrowTop = midpointOfAllVisibles + this.distanceBetweenArrows / 2;
 			this.$downArrow.css('top', downArrowTop);
 
 			// We assume inputs are of equal width
@@ -228,13 +226,15 @@
 
 	EndlessInput.prototype.activateArrows = function () {
 		var that = this;
-		this.$upArrow.on('click', function () {
+		this.$upArrow.on('click', function (e) {
+			e.preventDefault();
 			if (that.$activeElement.prev()) {
 				that.$activeElement.prev().focus();	
 			}
 		});
 
-		this.$downArrow.on('click', function () {
+		this.$downArrow.on('click', function (e) {
+			e.preventDefault();
 			if (that.$activeElement.next()) {
 				that.$activeElement.next().focus();	
 			}
