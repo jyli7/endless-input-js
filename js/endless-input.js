@@ -226,12 +226,26 @@
 
 	EndlessInput.prototype.activateArrows = function () {
 		var that = this;
+		// var debouncedFocusPrev = _.debounce(function (e) {
+		// 	e.preventDefault();
+		// 	if (that.$activeElement.prev()) {
+		// 		this.$activeElement.prev().focus();
+		// 	}
+		// }, this.inputsSlideDelay);
+
 		this.$upArrow.on('click', function (e) {
 			e.preventDefault();
 			if (that.$activeElement.prev()) {
-				that.$activeElement.prev().focus();	
+				that.$activeElement.prev().focus();
 			}
 		});
+
+		// var debouncedPrev = _.debounce(function (e) {
+		// 	e.preventDefault();
+		// 	if (that.$activeElement.prev()) {
+		// 		this.$activeElement.prev().focus();
+		// 	}
+		// }, this.inputsSlideDelay);
 
 		this.$downArrow.on('click', function (e) {
 			e.preventDefault();
@@ -266,9 +280,11 @@
 			this.fixFormHeight();
 		}
 
-		this.$inputs.on('focus', function () {
+		var throttledActivateInput = _.throttle(function () {
 			that.activateInput($(this));
-		});
+		}, this.inputsSlideDelay);
+
+		this.$inputs.on('focus', throttledActivateInput);
 
 		// NOTE: Add arrows first, then implement selective showing of arrows
 		// REFACTOR ALL OF THIS!
