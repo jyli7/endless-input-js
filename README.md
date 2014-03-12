@@ -7,7 +7,7 @@ You can see it in action [here](http://www.jylcreations.com/endless-input)
 ## How to use this
 
 1. Include these three js files in your HTML file's head:
-```javascript
+```
 	<script src="js/underscore.min.js"></script>
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script src="js/endless-input.js"></script>
