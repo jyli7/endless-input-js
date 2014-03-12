@@ -32,7 +32,7 @@
 	var customShow = function ($inputs) {
 		$inputs.animate({
 			opacity: 1
-		}, this.inputsSlideDelay * 0.5);
+		}, this.inputsSlideDelay);
 		$inputs.removeClass('hide-with-z-index');
 	}
 
